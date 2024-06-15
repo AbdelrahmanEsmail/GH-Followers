@@ -8,10 +8,12 @@
 import UIKit
 
 class SearchVC: UIViewController {
-
+    // MARK: - Properties
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()
     let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    
+    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
     
     
     override func viewDidLoad() {
@@ -34,12 +36,17 @@ class SearchVC: UIViewController {
     }
     
     @objc func pushFollowerListVC(){
-        let followersListVC = FollowerListVC()
-        followersListVC.username = usernameTextField.text
-        followersListVC.title = usernameTextField.text
-        navigationController?.pushViewController(followersListVC, animated: true)
+        guard isUsernameEntered else {
+                presentGFAlertOnMainThread(title: "Empty Username", message: "Please Enter a username. we need to know who to look for 😊", buttomTitle: "Ok")
+                return
+            }
+        
+            let followersListVC = FollowerListVC()
+            followersListVC.username = usernameTextField.text
+            followersListVC.title = usernameTextField.text
+            navigationController?.pushViewController(followersListVC, animated: true)
     }
-
+    // MARK: - Configurations
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false

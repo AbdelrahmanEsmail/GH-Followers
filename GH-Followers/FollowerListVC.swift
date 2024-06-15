@@ -8,7 +8,7 @@
 import UIKit
 
 class FollowerListVC: UIViewController {
-    
+    // MARK: - Properties
     var username: String!
     override func viewDidLoad() {
         super.viewDidLoad()
