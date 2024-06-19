@@ -12,27 +12,27 @@ class NetworkManager {
     let baseURL = "https://api.github.com"
     private init() {}
     
-    func getFollowers(for username: String, page:Int, completed: @escaping ([Follower]?,String?) -> Void){
+    func getFollowers(for username: String, page:Int, completed: @escaping ([Follower]?,errorMessage?) -> Void){
         let endpoint = baseURL + "/users/\(username)/followers?per_page=100&page=\(page)"
         
         guard let url = URL(string: endpoint) else {
-            completed(nil,"This username created an invaild request, Please Try again.")
+            completed(nil,.invaildUsername)
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completed(nil,"Unable to complete your request, Please Check your internet connection.")
+            if let _ = error {
+                completed(nil,.unableToComplete)
                 return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(nil,"Invaild response from the server, Please try again.")
+                completed(nil,.invaildResponse)
                 return
             }
             
             guard let data = data else {
-                completed(nil,"The data recieved from the server is invalid, Please try again.")
+                completed(nil,.invaildData)
                 return
             }
             
@@ -42,7 +42,7 @@ class NetworkManager {
                 let followers = try decoder.decode([Follower].self, from: data)
                 completed(followers,nil)
             } catch {
-                completed(nil,"The data recieved from the server is invalid, Please try again.")
+                completed(nil,.invaildData)
             }
         }
         
