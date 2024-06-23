@@ -37,14 +37,14 @@ class SearchVC: UIViewController {
     
     @objc func pushFollowerListVC(){
         guard isUsernameEntered else {
-                presentGFAlertOnMainThread(title: "Empty Username", message: "Please Enter a username. we need to know who to look for 😊", buttomTitle: "Ok")
-                return
-            }
+            presentGFAlertOnMainThread(title: "Empty Username", message: "Please Enter a username. we need to know who to look for 😊", buttomTitle: "Ok")
+            return
+        }
         
-            let followersListVC = FollowerListVC()
-            followersListVC.username = usernameTextField.text
-            followersListVC.title = usernameTextField.text
-            navigationController?.pushViewController(followersListVC, animated: true)
+        let followersListVC = FollowerListVC()
+        followersListVC.username = usernameTextField.text
+        followersListVC.title = usernameTextField.text
+        navigationController?.pushViewController(followersListVC, animated: true)
     }
     // MARK: - Configurations
     func configureLogoImageView() {
@@ -57,7 +57,7 @@ class SearchVC: UIViewController {
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200),
-                                    ])
+        ])
     }
     
     func configureTextFieldView() {
