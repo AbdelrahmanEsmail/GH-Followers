@@ -1,8 +1,8 @@
 //
-//  ErrorMessage.swift
+//  GFError.swift
 //  GH-Followers
 //
-//  Created by Abdelrahman Esmail on 19/06/2024.
+//  Created by Abdelrahman Esmail on 25/06/2024.
 //
 
 import Foundation
