@@ -40,12 +40,11 @@ class GFItemInfoView: UIView {
             sympolImageView.widthAnchor.constraint(equalToConstant: 20),
             sympolImageView.heightAnchor.constraint(equalToConstant: 20),
             
-            titleLabel.centerXAnchor.constraint(equalTo: sympolImageView.centerXAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: sympolImageView.trailingAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             titleLabel.heightAnchor.constraint(equalToConstant: 18),
             
-            countLabel.topAnchor.constraint(equalTo: sympolImageView.bottomAnchor,constant: 4),
+            countLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 4),
             countLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             countLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             countLabel.heightAnchor.constraint(equalToConstant: 18)
@@ -57,10 +56,10 @@ class GFItemInfoView: UIView {
         switch itemInfoType {
         case .gists:
             sympolImageView.image = UIImage(systemName: SFSymbols.gists)
-            titleLabel.text = "Gists"
+            titleLabel.text = "Public Gists"
         case .repos:
             sympolImageView.image = UIImage(systemName: SFSymbols.repos)
-            titleLabel.text = "Repos"
+            titleLabel.text = "Public Repos"
         case .followers:
             sympolImageView.image = UIImage(systemName: SFSymbols.followers)
             titleLabel.text = "Followers"

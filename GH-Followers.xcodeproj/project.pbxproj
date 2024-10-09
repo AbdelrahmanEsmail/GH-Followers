@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,6 +65,10 @@
 		CCDCA5102C23994A00E73D49 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		CCDE925A2C25FC8F00E2C90B /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CC1AF34D2CB630AA00B9A92B /* ItemInfoVCs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ItemInfoVCs; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CC0D634A2C19D5C100E70C5A /* Frameworks */ = {
@@ -144,6 +148,7 @@
 		CC77A90C2C287D6A003F15D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC1AF34D2CB630AA00B9A92B /* ItemInfoVCs */,
 				CCDC13EE2C1DC4560018188D /* GFAlertVC.swift */,
 				CC88188C2C2B356100AC7547 /* GFUserInfoHeaderVC.swift */,
 			);
@@ -253,6 +258,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CC1AF34D2CB630AA00B9A92B /* ItemInfoVCs */,
 			);
 			name = "GH-Followers";
 			productName = "GH-Followers";
